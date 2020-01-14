@@ -115,7 +115,7 @@ public class RNFSManager extends ReactContextBaseJavaModule {
     Uri uri = getFileUri(filepath, false);
     OutputStream stream;
     try {
-      stream = reactContext.getContentResolver().openOutputStream(uri, append ? "wa" : "w");
+      stream = reactContext.getContentResolver().openOutputStream(uri, append ? "wa" : "wt");
     } catch (FileNotFoundException ex) {
       throw new IORejectionException("ENOENT", "ENOENT: no such file or directory, open '" + filepath + "'");
     }
